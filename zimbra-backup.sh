@@ -24,10 +24,10 @@ then
 	echo "Your mails box is: $NAME@$DOMAIN"
 	echo ""
 	
-	tail -n1 teste.sh | wc -c | xargs -I {} truncate teste.sh -s -{}
+	tail -n1 /opt/zimbra/backup/zimbra-backup.sh | wc -c | xargs -I {} truncate /opt/zimbra/backup/zimbra-backup.sh -s -{}
 	echo "zmmailbox -z -m $NAME@$DOMAIN getRestURL "//?fmt=tgz" > /opt/zimbra/backup/youdomain/$NAME-$(date +%d)-$(date +%m)-$(date +%y).tgz" >> /opt/zimbra/backup/zimbra-backup.sh
 	echo "Backup Contact : Success " >> /opt/zimbra/backup/zimbra-backup.sh
-	fi >> /opt/zimbra/backup/zimbra-backup.sh
+	echo "fi" >> /opt/zimbra/backup/zimbra-backup.sh
 	echo "Mail Box add on backup"
 fi
 
