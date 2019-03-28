@@ -63,6 +63,10 @@ If you see ***done*** message in your console, first make a backup of course...
 ```sh
 cp -a /opt/zimbra/ssl/zimbra /opt/zimbra/ssl/zimbra.$(date "+%Y%m%d")
 ```
+Now copy privkey.pem for commercial.key
+```sh
+ cp /opt/zimbra/ssl/privkey.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key
+ ```
 Soooo, we are ready to deploy new certificates, run deploycrt command via zmcertmgr.
 ```sh
 /opt/zimbra/bin/zmcertmgr deploycrt comm cert.pem chain.pem 
